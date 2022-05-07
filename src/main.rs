@@ -26,7 +26,47 @@ fn App<G: Html>(cx: Scope) -> View<G> {
                 div(class="frow direction-column row-center width-100") {
                     h3 { "Hello, Rusty MiniBank here!" }
                     h4 { "Make by Rust-Nairobi Developers for Rusteceans" }
+#[component]
+fn SignUp<G: Html>(cx: Scope) -> View<G> {
+    view! { cx,
+        form(class="form") {
+            h1 { "Create an account"}
+            label {
+                "Username"
+                input(
+                    class="h-40px",
+                    type="text",
+                    placeholder="john_doe"
+                )
+            }
+            label {
+                "Email"
+                input(
+                    class="h-40px",
+                    type="email",
+                    placeholder="johndoe@example.com"
+                )
+            }
+            label {
+                "Password"
+                input(
+                    class="h-40px",
+                    type="password",
+                    placeholder="complicated"
+                )
+            }
+            label(class="row-start") {
+                input(
+                    type="checkbox",
+                    value="toc"
+                )
+                "I agree with the "
+                a {
+                    "terms of service"
                 }
+            }
+            button(class="h-40px") {
+                "Create account"
             }
         }
     }
