@@ -10,7 +10,71 @@ $error: #f03629;
 $success: #48aa25;
 $warning: #cf662b;
 
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 .debug {
     background-color: green !important;
 }
 
+.form {
+    width: 400px;
+
+    h1 {
+        margin: 10px 0px;
+    }
+
+    input {
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    label {
+        color: black;
+        font-size: 1.2em;
+    }
+
+    button {
+        border: 0;
+        width: 100%;
+        background-color: $sec;
+    }
+}
+
+// Background colors
+* {
+    .bg-p { background-color: $pri; }
+
+    .bg-s { background-color: $sec; }
+
+    .bg-w { background-color: $white; }
+}
+
+// Foreground colors.
+* {
+    .fg-p { color: $pri; }
+
+    .fg-w { color: $white; }
+
+    .fg-ccc { color: #cccccc; }
+
+    .fg-333 { color: #333333; }
+}
+
+// Heights
+* {
+    .h-100vh { height: 100vh; }
+
+    .h-40px { height: 40px; }
+
+    .minh-100vh { min-height: 100vh; }
+}
+
+// Widths
+*{
+    .w-100 { width: 100% }
+
+    .w-50 { width: 50%; }
+}
