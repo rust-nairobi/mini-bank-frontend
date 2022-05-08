@@ -1,9 +1,20 @@
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 use sycamore::prelude::*;
+use sycamore_router::{Route,Router,RouterProps, HistoryIntegration};
 
 mod rust_nairobi_logo;
 pub use rust_nairobi_logo::*;
+
+#[derive(Route)]
+enum AppRoutes {
+    #[to("/")]
+    Index,
+    #[to("/signup")]
+    SignUp,
+    #[not_found]
+    NotFound,
+}
 
 fn main() {
     sycamore::render(|cx| {
