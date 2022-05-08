@@ -1,7 +1,7 @@
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 use sycamore::prelude::*;
-use sycamore_router::{Route,Router,RouterProps, HistoryIntegration};
+use sycamore_router::{Route,Router, HistoryIntegration};
 
 mod rust_nairobi_logo;
 pub use rust_nairobi_logo::*;
