@@ -113,3 +113,11 @@ fn SignUp<G: Html>(cx: Scope) -> View<G> {
         }
     }
 }
+
+#[component]
+fn NotFound<G: Html>(cx: Scope) -> View<G> {
+    view! { cx,
+        h1 { "Error 404" }
+        h4 { "Page not found" }
+    }
+}
