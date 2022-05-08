@@ -76,7 +76,7 @@ fn SignUp<G: Html>(cx: Scope) -> View<G> {
         div(class="frow  row-center h-100vh") {
             div(class="frow centered-column col-md-1-3 bg-p minh-100vh") {
                 h1(class="fg-w") {
-                    "Mini Bank"
+                   a(href="/", class="fg-w") { "Mini Bank" }
                 }
                 div(class="w-50"){
                     (svg_logo(cx))
