@@ -26,6 +26,30 @@ fn main() {
 
 #[component]
 fn App<G: Html>(cx: Scope) -> View<G> {
+    view! { cx,
+        Router {
+            integration: HistoryIntegration::new(),
+            view: |cx, route: &ReadSignal<AppRoutes>| {
+                view! { cx,
+                    div(class="app") {
+                        (match route.get().as_ref() {
+                            AppRoutes::Index => view! { cx,
+                                Index()
+                            },
+                            AppRoutes::SignUp => view! { cx,
+                                SignUp()
+                            },
+                            AppRoutes::NotFound => view! { cx,
+                                NotFound()
+                            },
+                        })
+                    }
+                }
+            }
+        }
+    }
+}
+
 #[component]
 fn Index<G: Html>(cx: Scope) -> View<G> {
     view! { cx,
@@ -47,6 +71,7 @@ fn Index<G: Html>(cx: Scope) -> View<G> {
 }
 
 #[component]
+fn SignUp<G: Html>(cx: Scope) -> View<G> {
     view! { cx,
         div(class="frow  row-center h-100vh") {
             div(class="frow centered-column col-md-1-3 bg-p minh-100vh") {
@@ -58,18 +83,14 @@ fn Index<G: Html>(cx: Scope) -> View<G> {
                 }
             }
             div(class="frow row-center col-md-2-3") {
-                SignUp()
-                // div(class="frow direction-column row-center width-100") {
-                //     h3 { "Hello, Rusty MiniBank here!" }
-                //     h4 { "Make by Rust-Nairobi Developers for Rusteceans" }
-                // }
+                SignUpForm()
             }
         }
     }
 }
 
 #[component]
-fn SignUp<G: Html>(cx: Scope) -> View<G> {
+fn SignUpForm<G: Html>(cx: Scope) -> View<G> {
     view! { cx,
         form(class="form") {
             h1 { "Create an account"}
